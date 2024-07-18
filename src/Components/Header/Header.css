@@ -1,0 +1,21 @@
+.result-container {
+    width: 21em;
+    height: 30em;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+.branded-result-card {
+    display: grid;
+    grid-template-columns: 35% 45% 20%;
+    grid-template-rows: 35% 5% 5% 5% 35% 15%;
+    grid-template-areas: "food_image result result result result calories_number"
+    "food_image result result result result calories_text"
+    "food_image brand_name serving_qty serving_unit . calories_text"
+}
+
+.food_image {
+    width: 35%;
+    height: 35%;
+}
+
