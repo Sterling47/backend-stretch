@@ -1,4 +1,5 @@
 .cardWrapper {
+    display: flex;
     box-sizing: border-box;
     border: 2px solid red;
     width: 10rem;
