@@ -1,0 +1,13 @@
+.cardWrapper {
+    box-sizing: border-box;
+    border: 2px solid red;
+    width: 10rem;
+    height: 10rem;
+}
+
+.card {
+    width: 10rem;
+    height: 10rem;
+    background: rgb(138, 138, 233);
+    margin: 0;
+}
