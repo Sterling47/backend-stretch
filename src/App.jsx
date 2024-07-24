@@ -7,16 +7,18 @@ import Detailpage from './Components/DetailPage/Detailpage'
 
 const App = () => {
   const location = useLocation()
-const [allBFCategories, setAllBFCategories] = useState([])
-const [categoryFoods, setCategoryFoods] = useState([]);
-useEffect(() => {
-  getBFCategories()
-  .then(result => setAllBFCategories(result))
-}, [])
+  const [allBFCategories, setAllBFCategories] = useState([])
+  const [categoryFoods, setCategoryFoods] = useState([]);
 
+ //fetchRequest
 function getCategoryFood(category) {
   fetch(`http://localhost:3001/foodcategory/${category}`)
-  .then(response => response.json())
+  .then(response => {response.json()
+    if(!response.ok) {
+      throw new Error('Response not working')
+    }
+    return response.json()
+  })
   .then(data => {
     setCategoryFoods(data)})
 }
@@ -31,8 +33,29 @@ const getBFCategories = () => {
     .catch((error) => console.error('There has been an issue with request: ', error));
 }
 
+const getCategory = (id) => {
+  fetch(`http://localhost:3001/nutrientCategory/${id}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then((data) => console.log('hello:::', data))
+    .catch((error) => console.error('Error fetching the category:', error));
+};
 
-  return (
+//useEffect's
+useEffect(() => {
+  getCategory(383037);
+}, [])
+
+useEffect(() => {
+  getBFCategories()
+  .then(result => setAllBFCategories(result))
+}, [])
+
+return (
     <div className='App'>
       {!location.pathname.startsWith('/detail') && <Header allBFCategories={allBFCategories} getCategoryFood={getCategoryFood}/>}
       <Routes>
