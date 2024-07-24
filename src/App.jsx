@@ -9,17 +9,15 @@ const App = () => {
   const location = useLocation()
   const [brandFoods, setbrandFoods] = useState([]);
 
- //fetchRequest
   const getFood = () => {
     fetch('http://localhost:3001/foodnames')
     .then(response => response.json())
     .then(data => {
-      console.log(data)
-      setbrandFoods(data)})
+      setbrandFoods(data)
+    })
     .catch(err => console.log(err))
   }
 
-//useEffect's
   useEffect(() => {
     getFood()
   },[])
@@ -33,7 +31,6 @@ const searchFood = (query) => {
   const matchingFoods = brandFoods.filter(food => { 
     return food.description.toLowerCase().includes(query.toLowerCase())
 })
-  console.log('matchingFoods', matchingFoods)
   setbrandFoods(matchingFoods)
 }
 return (
