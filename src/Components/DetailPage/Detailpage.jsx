@@ -2,7 +2,7 @@ import React from 'react'
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom'
 
-const Detailpage = ({ brandFoods, getFilteredFood }) => {
+const Detailpage = ({ getFilteredFood }) => {
   const { id } = useParams();
   const singleFood = getFilteredFood(id);
 
