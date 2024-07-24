@@ -25,4 +25,18 @@ describe('Food Ingredients Search', () => {
       cy.wrap($el).should('contain', 'apple');
     });
   });
+
+  it('should navigate to the detail page', () => {
+    cy.wait('@getFood');
+  
+    cy.get('.card').first().click();
+  
+  
+    cy.url().should('include', '/detail');
+    cy.get('h2').should('contain', 'Detailpage');
+  });
+
+
+
 })
+
