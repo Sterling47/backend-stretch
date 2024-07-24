@@ -28,9 +28,17 @@ const getFilteredFood = (id) => {
   const filteredFood = brandFoods.filter(food => food.fdc_id === id)
   return filteredFood[0]
 }
+
+const searchFood = (query) => {
+  const matchingFoods = brandFoods.filter(food => { 
+    return food.description.toLowerCase().includes(query.toLowerCase())
+})
+  console.log('matchingFoods', matchingFoods)
+  setbrandFoods(matchingFoods)
+}
 return (
     <div className='App'>
-      {!location.pathname.startsWith('/detail') && <Header/>}
+      {!location.pathname.startsWith('/detail') && <Header searchFood={searchFood}/>}
       <Routes>
         <Route path="/" element={<Cardcontainer getFood={brandFoods}/>} />
         <Route path="/detail/:id" element={<Detailpage brandFoods={brandFoods} getFilteredFood={getFilteredFood}/>} />
