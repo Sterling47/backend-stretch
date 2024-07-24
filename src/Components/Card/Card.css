@@ -1,14 +1,15 @@
 .cardWrapper {
     display: flex;
     box-sizing: border-box;
-    border: 2px solid red;
-    width: 10rem;
-    height: 10rem;
+    width: 80%;
+    height: 6rem;
+    justify-content: center;
 }
 
 .card {
-    width: 10rem;
-    height: 10rem;
+    width: 20rem;
+    height: 2rem;
     background: rgb(138, 138, 233);
+    border-bottom: 2px solid red;
     margin: 0;
 }
