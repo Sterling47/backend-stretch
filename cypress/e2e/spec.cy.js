@@ -4,7 +4,7 @@ describe('Food Ingredients Search', () => {
       fixture: 'example.json',
     }).as('getFood');
     
-    cy.visit('http://127.0.0.1:5173/');
+    cy.visit('http://localhost:5173/');
   });
 
   it('should load the homepage and display food items', () => {
@@ -27,13 +27,14 @@ describe('Food Ingredients Search', () => {
   });
 
   it('should navigate to the detail page', () => {
-    cy.wait('@getFood');
-  
+    cy.wait('@getFood')
     cy.get('.card').first().click();
-  
-  
-    cy.url().should('include', '/detail');
+    cy.url().should('include', '/detail/1');
     cy.get('h2').should('contain', 'Detailpage');
+    cy.get('p').eq(0).should('contain', '1');
+    cy.get('p').eq(1).should('contain', 'Brand A');  
+    cy.get('p').eq(2).should('contain', 'apple'); 
+    cy.get('p').eq(3).should('contain', '100'); 
   });
 
 
