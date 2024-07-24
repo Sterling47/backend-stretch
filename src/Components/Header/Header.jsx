@@ -23,7 +23,7 @@ const [categoryValue, setCategoryValue] = useState('')
         </div>
       </form>
       <div className='category-wrapper'>
-        <select id='categories' name='categories'>
+        <select id='categories' name='categories' value={categoryValue} onChange={(e) => setCategoryValue(e.target.value)}>
           <label form='categories'>Search by food category:</label>
           {BFCategorySelections}
         </select>  
