@@ -1,0 +1,16 @@
+[
+  {
+    "fdc_id": 1,
+    "brand_name": "Brand A",
+    "description": "apple",
+    "ingredients": "apple, water, sugar",
+    "serving_size": "100g"
+  },
+  {
+    "fdc_id": 2,
+    "brand_name": "Brand B",
+    "description": "banana",
+    "ingredients": "banana, water, sugar",
+    "serving_size": "150g"
+  }
+]
