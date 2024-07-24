@@ -52,7 +52,8 @@ useEffect(() => {
 
 useEffect(() => {
   getBFCategories()
-  .then(result => setAllBFCategories(result))
+  .then(result => { console.log("RESULT: ", result)
+    setAllBFCategories(result)})
 }, [])
 
 return (
