@@ -14,4 +14,15 @@ describe('Food Ingredients Search', () => {
     cy.get('.card').should('have.length.greaterThan', 0);
   });
 
+  it('should search for food items', () => {
+    cy.wait('@getFood');
+
+    cy.get('input[type="text"]').type('apple');
+    cy.get('button').click();
+
   
+    cy.get('.card').each(($el) => {
+      cy.wrap($el).should('contain', 'apple');
+    });
+  });
+})
