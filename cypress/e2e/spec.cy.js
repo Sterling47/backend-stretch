@@ -7,3 +7,11 @@ describe('Food Ingredients Search', () => {
     cy.visit('http://127.0.0.1:5173/');
   });
 
+  it('should load the homepage and display food items', () => {
+    cy.wait('@getFood');
+    cy.get('header').should('contain', 'Food Ingredients Search');
+
+    cy.get('.card').should('have.length.greaterThan', 0);
+  });
+
+  
