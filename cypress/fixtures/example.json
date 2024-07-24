@@ -4,13 +4,15 @@
     "brand_name": "Brand A",
     "description": "apple",
     "ingredients": "apple, water, sugar",
-    "serving_size": "100g"
+    "serving_size": "100",
+    "serving_size_unit": "g"
   },
   {
     "fdc_id": 2,
     "brand_name": "Brand B",
     "description": "banana",
     "ingredients": "banana, water, sugar",
-    "serving_size": "150g"
+    "serving_size": "150",
+    "serving_size_unit": "g"
   }
 ]
