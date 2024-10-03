@@ -15,7 +15,10 @@ For Testing:
 3) Choose e2e testing
 4) Run on your browser of choice (Preferebly Chrome)
 5) Select 'rt-test.cy.js' in the browser
-0
+
+### Deployed App: 
+[Ingredients Search Full Stack App](https://backend-stretch.vercel.app/)
+
 ### Preview of App:
 [Preview of main page](https://imgur.com/DKBxmCx)
 
